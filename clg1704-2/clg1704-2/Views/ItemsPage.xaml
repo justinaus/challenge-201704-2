@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="clg17042.Views.ItemsPage"
-    Title="{Binding Title}" xmlns:controls="clr-namespace:clg17042.Controls">
+    Title="{Binding Title}" xmlns:controls="clr-namespace:clg17042.Controls"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations">
 	<ContentPage.Content>
         <Grid>
             <StackLayout>
@@ -10,7 +12,13 @@
                         <DataTemplate>
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal" Spacing="10" Padding="10" x:Name="bbb">
-                                    <Image x:Name="UserImage" Source="{Binding Picture.Thumbnail}" HorizontalOptions="Start" />
+                                    <ffimageloading:CachedImage HorizontalOptions="Start"
+                                        DownsampleToViewSize="true" Source="{Binding Picture.Thumbnail}">
+                                        <ffimageloading:CachedImage.Transformations>
+                                            <fftransformations:CircleTransformation BorderSize="0" BorderHexColor="#547799"/>
+                                        </ffimageloading:CachedImage.Transformations>
+                                    </ffimageloading:CachedImage>
+                                    <!--<Image x:Name="UserImage" Source="{Binding Picture.Thumbnail}" HorizontalOptions="Start" />-->
                                     <StackLayout Spacing="0">
                                         <controls:BasicColorLabel Text="{Binding Name.First}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="Small" />
                                         <controls:BasicColorLabel Text="{Binding CellPhoneNumber}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="Micro" />

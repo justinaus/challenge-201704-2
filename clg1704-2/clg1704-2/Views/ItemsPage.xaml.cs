@@ -1,6 +1,7 @@
 ﻿using clg17042.Models;
 using clg17042.ViewModels;
 using Xamarin.Forms;
+using FFImageLoading.Transformations;
 
 namespace clg17042.Views
 {
@@ -13,6 +14,8 @@ namespace clg17042.Views
         public ItemsPage()
         {
             InitializeComponent();
+
+            //CircleTransformation
 
             BindingContext = viewModel = new ItemsViewModel();
         }

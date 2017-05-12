@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="clg17042.Views.ItemDetailPage"
-    Title="{Binding Title}" xmlns:controls="clr-namespace:clg17042.Controls">
+    Title="{Binding Title}" xmlns:controls="clr-namespace:clg17042.Controls"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations">
 	<ContentPage.Content>
-        <StackLayout Spacing="0">
-            <Image x:Name="UserImage" Source="{Binding Item.Picture.Large}" 
-            Margin="10" />
-            <controls:BasicColorLabel Text="{Binding Item.Name.First}" FontSize="Medium" 
-            HorizontalOptions="CenterAndExpand" />
-            <controls:BasicColorLabel Text="{Binding Item.CellPhoneNumber}" FontSize="Small" 
-            HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <StackLayout Spacing="0" >
+            <ffimageloading:CachedImage HorizontalOptions="Center" VerticalOptions="Center"
+                WidthRequest="128" HeightRequest="128"
+                DownsampleToViewSize="true" Source="{Binding Item.Picture.Large}" Margin="10">
+                <ffimageloading:CachedImage.Transformations>
+                    <fftransformations:CircleTransformation BorderSize="0"/>
+                </ffimageloading:CachedImage.Transformations>
+            </ffimageloading:CachedImage>
+            <!--<Image x:Name="UserImage" Source="{Binding Item.Picture.Large}" Margin="10" />-->
+            <controls:BasicColorLabel Text="{Binding Item.Name.First}" FontSize="Medium" HorizontalOptions="Center" />
+            <controls:BasicColorLabel Text="{Binding Item.CellPhoneNumber}" FontSize="Small" HorizontalOptions="Center" />
+       </StackLayout>
 	</ContentPage.Content>
 </ContentPage>

@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using FFImageLoading.Forms.Touch;
+using FFImageLoading.Transformations;
 using Foundation;
 using UIKit;
+
+
 
 namespace clg17042.iOS
 {
@@ -19,7 +22,14 @@ namespace clg17042.iOS
 			Xamarin.Calabash.Start();
 #endif
 
-            LoadApplication(new App());
+			//FFImageLoading 초기화
+			CachedImageRenderer.Init();
+
+            // Xamarin.Forms linker issue
+            //var ignore = new CachedImage();
+            var ignore = new CircleTransformation();
+
+			LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
         }

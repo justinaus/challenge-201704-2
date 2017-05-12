@@ -1,4 +1,6 @@
-﻿using clg17042.ViewModels;
+﻿using System;
+using System.Diagnostics;
+using clg17042.ViewModels;
 using Xamarin.Forms;
 
 namespace clg17042.Views
@@ -15,5 +17,6 @@ namespace clg17042.Views
 
             BindingContext = this.viewModel = viewModel;
         }
+
     }
 }

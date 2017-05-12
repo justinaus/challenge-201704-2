@@ -7,6 +7,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using FFImageLoading.Forms.Droid;
+using FFImageLoading.Transformations;
 
 namespace clg17042.Droid
 {
@@ -21,6 +23,11 @@ namespace clg17042.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+
+			//FFImageLoading 초기화
+			CachedImageRenderer.Init();
+
+            var ignore = new CircleTransformation();
 
             LoadApplication(new App());
         }
