@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="clg17042.Views.ItemDetailPage"
+    Title="{Binding Title}" xmlns:controls="clr-namespace:clg17042.Controls">
+	<ContentPage.Content>
+        <StackLayout Spacing="0">
+            <Image x:Name="UserImage" Source="{Binding Item.Picture.Large}" 
+            Margin="10" />
+            <controls:BasicColorLabel Text="{Binding Item.Name.First}" FontSize="Medium" 
+            HorizontalOptions="CenterAndExpand" />
+            <controls:BasicColorLabel Text="{Binding Item.CellPhoneNumber}" FontSize="Small" 
+            HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+	</ContentPage.Content>
+</ContentPage>
