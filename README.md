@@ -31,6 +31,8 @@ Android
 - Xamarin.Forms 를 이용하여 iOS/Android 모두에서 동작하는 어플리케이션을 작성해야 함
 - List 는 Infinite Scroll 기능을 포함해야함
 - 리스트의를 클릭하여 디테일을 표시해야함
+- (선택사항) 남녀성별에 따라 Layout 을 달리 표시하기.
+- (선택사항) Pull to refresh 기능 추가하기
 
 ## 참고사항
 - RESTful API : https://randomuser.me/ 을 이용해야함
