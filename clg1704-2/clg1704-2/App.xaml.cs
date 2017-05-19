@@ -7,7 +7,7 @@ namespace clg17042
     public partial class App : Application
     {
 
-		public static string BackendUrl = "https://randomuser.me/";
+		public static string BackendUrl = "https://randomuser.me";
 
 		// not use seed.
 		// https://randomuser.me/api/?seed=foobar
